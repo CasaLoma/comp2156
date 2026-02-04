@@ -1,11 +1,11 @@
-name: CI Exercise 03
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: echo "Hello, world! Exercise 03 is running."
+language: node_js
+node_js:
+  - "stable"
+dist: focal
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+on:
+  branch: main
