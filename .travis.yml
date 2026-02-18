@@ -1,0 +1,27 @@
+git add .travis.yml
+git commit -m "Fix Travis config"
+git push
+language: node_js
+node_js:
+  - "stable"
+dist: focal
+
+branches:
+  only:
+    - main   # or master (check your repo)
+
+install:
+  - npm install
+
+script:
+  - npm run build
+  - mv build/index.html build/404.html
+
+deploy:
+  provider: pages
+  edge: true
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: build
+  on:
+    branch: main   # or master
