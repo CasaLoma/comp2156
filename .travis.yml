@@ -16,7 +16,7 @@ install:
 script:
   - npm run build
   - mv build/index.html build/404.html
-
+  -
 deploy:
   provider: pages
   edge: true
@@ -25,3 +25,4 @@ deploy:
   local_dir: build
   on:
     branch: main
+#Small Edit test
