@@ -8,7 +8,7 @@ dist: focal
 
 branches:
   only:
-    - main   # or master (check your repo)
+    - main
 
 install:
   - npm install
@@ -24,4 +24,4 @@ deploy:
   github_token: $github_token
   local_dir: build
   on:
-    branch: main   # or master
+    branch: main
