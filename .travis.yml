@@ -9,6 +9,8 @@ dist: focal
 branches:
   only:
     - main
+git: 
+  depth: false
 
 install:
   - npm install
